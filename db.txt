@@ -1,0 +1,4 @@
+DB
+user : mern_user
+pssword : R48RtApaUlzvnnxh
+cadena de conexion:  mongodb+srv://mern_user:R48RtApaUlzvnnxh@calendardb.cmbrfub.mongodb.net
