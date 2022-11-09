@@ -2,6 +2,7 @@ const express = require('express');
 require('dotenv').config() //VARIABLE DE ENTORNO
 const {dbConnection} = require('./database/config'); //Importacion del config de mongoDB
 const cors = require('cors')
+
 //* Crear el servidor con express
 const app = express();
 
@@ -23,10 +24,12 @@ app.use('/api/auth', require('./routes/auth') );
 app.use('/api/events', require('./routes/events') );
 //TODO CRUD: eventos
 
-
+app.get('*',(req,res)=>{
+    res.sendFile(__dirname + '/public/index.html');
+});
 
 //*Escuchar las peticiones
 
 app.listen(process.env.PORT,()=>{ //Configuramos el puerto
     console.log(`Servidor en puerto ${process.env.PORT}`);
-})
+});
